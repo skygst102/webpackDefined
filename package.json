@@ -2,10 +2,11 @@
   "name": "webpackTest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "prod.config.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "pro": "webpack --config config/prod.config.js",
+    "dev": "webpack --config config/dev.config.js"
   },
   "keywords": [],
   "author": "",
