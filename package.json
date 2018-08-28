@@ -4,8 +4,8 @@
   "description": "",
   "main": "prod.config.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "pro": "webpack --config config/prod.config.js",
+    "start": "webpack-dev-server --config config/dev.config.js --open",
+    "pro": "webpack --config config/pro.config.js",
     "dev": "webpack --config config/dev.config.js"
   },
   "keywords": [],

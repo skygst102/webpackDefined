@@ -26,7 +26,7 @@ module.exports= [
         filename: "css/[name]/[name].[chunkhash:8].css",
         chunkFilename: "[id].css",
     }),
-    new CleanWebpackPlugin(["dist","./tt"]
+    new CleanWebpackPlugin(["dist","tt"]
     ,{
         root: path.resolve(__dirname,'../'),     //根目录  /* 只能删除文件所在目录下的文件夹 */
         verbose:  true,        　　　　　　　　　　//开启在控制台输出信息
