@@ -26,11 +26,10 @@ module.exports= [
         filename: "css/[name]/[name].[chunkhash:8].css",
         chunkFilename: "[id].css",
     }),
-    new CleanWebpackPlugin(["dist","./tt"]
-    ,{
+    new CleanWebpackPlugin(["dist"],{
         root: path.resolve(__dirname,'../'),     //根目录  /* 只能删除文件所在目录下的文件夹 */
         verbose:  true,        　　　　　　　　　　//开启在控制台输出信息
-        dry:      true        　　　　　　　　　　//启用删除文件
+        dry:      false        　　　　　　　　　　//启用删除文件//启用后文件夹无法删除
     }
     ), //传入数组,指定生成文件时要清空的目录
     new webpack.ProvidePlugin({  //使用ProvidePlugin加载的模块在使用时将不再需要import和require进行引入，使用语法

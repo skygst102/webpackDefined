@@ -13,5 +13,6 @@ module.exports = {
     },
     module: loader,
     plugins: plugins,
-    devServer:devServer
+    devServer:devServer,
+    devtool: 'source-map'
 };
