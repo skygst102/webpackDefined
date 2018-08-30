@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-module.exports = {
+module.exports={
     rules: [
         {
             test: /\.js$/,
@@ -19,7 +19,7 @@ module.exports = {
                 {
                     loader: "css-loader",
                     options: {
-                        // minimize: true,     //压缩css并合并形同样式
+                        minimize: process.env.NODE_ENV=='development'?false:true,     //压缩css并合并形同样式//cli set NODE_ENV=development&&
                         importLoaders: 2,
                         sourceMap: true
                     }

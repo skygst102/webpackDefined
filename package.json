@@ -5,8 +5,8 @@
   "main": "prod.config.js",
   "scripts": {
     "start": "webpack-dev-server --config config/dev.config.js --open",
-    "pro": "webpack --config config/pro.config.js",
-    "dev": "webpack --config config/dev.config.js"
+    "pro": "set NODE_ENV=production&&webpack --config config/pro.config.js --mode production",
+    "dev": "set NODE_ENV=development&&webpack --config config/dev.config.js --mode development"
   },
   "keywords": [],
   "author": "",
