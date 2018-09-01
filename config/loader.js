@@ -45,7 +45,10 @@ module.exports={
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             loader: "url-loader",
             options: {
-                limit: 10000            //图片小于时转换为base64;
+                limit: 1024,                //图片小于时转换为base64;
+                name:'[hash:8].[ext]',        //name表示输出的文件名规则，如果不添加这个参数，输出的就是默认值：文件哈希。加上[path]表示输出文件的相对路径与当前文件相对路径相同，加上[name].[ext]则表示输出文件的名字和扩展名与当前相同
+                outputPath:'assets/image/',            //publicPath表示打包文件中引用文件的路径前缀
+                // publicPath:'output/',               //publicPath表示打包文件中引用文件的路径前缀,如 DNS 路径
             }
         },
         {

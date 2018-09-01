@@ -2,20 +2,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
-const path = require("path");   
+const path = require("path");
 module.exports= [
+    new webpack.optimization.minimize({
+        compress: {
+          warnings: false,
+          drop_debugger: true,
+          drop_console: true
+        },
+        sourceMap: true
+      }),
     new HtmlWebpackPlugin({
         //页面模板
         template: "./src/pages/home/index.ejs",  //webpack默认为
-        filename: "index.html",
+        filename: "home/index.html",
         title: "index",
         favicon: '',
         cache: true,             //只有在内容变化时才生成一个新的文件
         chunks: ['home'],       //引入指定的文件
         inject: 'head',         //有4个值: true | 'head' | 'body' | false//引入js的位置
         minify: {
-            removeComments: true, //去掉注释
-            collapseWhitespace: false //true压缩为一行
+            removeComments: process.env.NODE_ENV=='development'? false:true, //去掉注释
+            collapseWhitespace: process.env.NODE_ENV=='development'? false:true //true压缩为一行
         },
         // excludeChunks : ['jq','../js/common/jq.js'],      //很多chunks，排除不要加载的
         // inlineSource: '.(js|css)$' //把页面src引入文件的方式，改成用script标签嵌入的方式，减少http请求( 提高加载性能）
@@ -23,7 +31,7 @@ module.exports= [
     }),
     new MiniCssExtractPlugin({
         //单独打包css
-        filename: "css/[name]/[name].[chunkhash:8].css",
+        filename: "assets/css/[name]/[name].[chunkhash:8].css",
         chunkFilename: "[id].css",
     }),
     new CleanWebpackPlugin(["dist"],{            //传入数组,指定生成文件时要清空的目录

@@ -1,9 +1,9 @@
-@import "../css/scss.scss";
+@import "./scss.scss";
 body {
     line-height: 2;
     color: $red;
     font-size: 12px;
-   
+
 }
 p{
     transform: scale(3)
@@ -11,6 +11,6 @@ p{
 div {
     width:100%;
     height: 161px;
-    background: url(../assets/11.png) no-repeat;
-    
+    background: url(../image/11.png) no-repeat;
+
 }
