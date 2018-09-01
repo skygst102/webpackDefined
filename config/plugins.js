@@ -4,6 +4,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 const path = require("path");
 module.exports= [
+    // new webpack.optimization.minimize({  //控制台信息控制，未调通
+    //     compress: {
+    //       warnings: false,
+    //       drop_debugger: true,
+    //       drop_console: true
+    //     },
+    //     sourceMap: true
+    //   }),
     new HtmlWebpackPlugin({
         //页面模板
         template: "./src/pages/home/index.ejs",  //webpack默认为
